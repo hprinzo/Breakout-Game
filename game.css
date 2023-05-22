@@ -3,6 +3,7 @@ body
 {
     color: #ecf0f1;
     background-color: #2c3e50;
+    overflow: hidden;
 }
 
 h2

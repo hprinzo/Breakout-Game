@@ -14,7 +14,7 @@ class Bricks
         this.brickHeight = 0;
         this.brickGap = 0;
         this.columns = 11;
-        this.rows = 3;
+        this.rows = 0;
         this.grid = null;
         this.liveBricks = 0;
     }
@@ -37,6 +37,13 @@ class Bricks
             this.grid[i] = true;
             this.liveBricks++;
         }
+        
+        this.rows++;
+
+        if (this.rows > 15)
+            this.rows = 3;
+        
+
     }
 
     draw() 
@@ -88,17 +95,22 @@ class Bricks
                 this.color = this.yellow;
                 break;
             case 2:
-                this.color = this.green;
-                break;
+
             case 3:
-                // this.color = this.yellow;
-                // break;
+
+            case 4:
+                this.color = this.orange;
+                break;
+            case 5:
+
+            case 6:
+
+            case 7:
+
+            case 8:
                 this.color = this.green;
                 break;
-            case 4:
-            case 5:
-                // this.color = this.green;
-                // break;
+                
         }
     }
 

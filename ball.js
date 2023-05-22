@@ -20,6 +20,10 @@ class Ball
         this.ypos = this.fx.height()/2 - this.size/2;
         this.yvel = this.fx.width() * 0.005;
         this.xvel = 0;
+
+        if (this.rows > 15)
+            this.xvel = 0; // Reset the x velocity to 0
+            this.yvel = this.fx.width() * 0.005; // Reset the y velocity to its initial value
     }
 
     reset() 
@@ -41,9 +45,7 @@ class Ball
         {
             this.yvel += 1;
             this.xvel += 1;
-            alert("Round complete! Next round");
             bricks.reset();
-            round++;
         }
     }
 
@@ -67,15 +69,15 @@ class Ball
 
     checkForPerimeterCollisions() 
     {
-        if ( this.ypos < 0 ) {
+        if ( this.ypos < 0 ) 
             this.yvel = -this.yvel;
-        }
-        if ( this.ypos > this.fx.height() ) {
+        
+        if ( this.ypos > this.fx.height() ) 
             this.reset();
-        }
-        if ( this.xpos < 0 || this.xpos > this.fx.width() - this.size) {
+
+        if ( this.xpos < 0 || this.xpos > this.fx.width() - this.size) 
             this.xvel = -this.xvel;
-        }
+
     }
 
     checkForCollisions(a,b) 
